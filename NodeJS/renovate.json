@@ -1,0 +1,53 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "automerge": true,
+
+    "postUpdateOptions": ["npmDedupe", "yarnDedupeFewer", "pnpmDedupe"],
+
+    "rebaseWhen": "conflicted",
+    "recreateClosed": true,
+    "recreateWhen": "always",
+
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": true
+    },
+
+    "packageRules": [
+        {
+            "matchManagers": ["npm"],
+            "automerge": true,
+            "postUpdateOptions": ["npmDedupe", "yarnDedupeFewer", "pnpmDedupe"],
+            "rebaseWhen": "behind-base-branch"
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "automerge": true,
+            "addLabels": ["dev-dependencies"]
+        },
+        {
+            "matchUpdateTypes": ["patch", "minor"],
+            "automerge": true
+        },
+        {
+            "matchUpdateTypes": ["major"],
+            "automerge": false,
+            "addLabels": ["major-update", "needs-review"]
+        }
+    ],
+
+    "rangeStrategy": "bump",
+    "transitiveRemediation": true,
+    "separateMajorMinor": true,
+    "labels": ["dependencies"],
+
+    "prHourlyLimit": 2,
+    "prConcurrentLimit": 5,
+
+    "schedule": [
+        "after 10pm every weekday",
+        "before 5am every weekday",
+        "every weekend"
+    ]
+}
