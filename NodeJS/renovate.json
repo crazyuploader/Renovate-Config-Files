@@ -4,6 +4,7 @@
     "automerge": true,
     "postUpdateOptions": ["npmDedupe", "yarnDedupeFewer", "pnpmDedupe"],
     "rebaseWhen": "conflicted",
+    "recreateClosed": false,
     "recreateWhen": "always",
     "lockFileMaintenance": {
         "enabled": true,

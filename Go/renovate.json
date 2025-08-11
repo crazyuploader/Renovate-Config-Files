@@ -2,12 +2,16 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:recommended"],
     "automerge": true,
+
     "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
+
     "rebaseWhen": "conflicted",
+    "recreateClosed": false,
     "recreateWhen": "always",
     "gomod": {
         "enabled": true
     },
+
     "packageRules": [
         {
             "matchManagers": ["gomod"],
@@ -16,8 +20,10 @@
             "rebaseWhen": "behind-base-branch"
         }
     ],
+
     "prHourlyLimit": 2,
     "prConcurrentLimit": 5,
+
     "schedule": [
         "after 10pm every weekday",
         "before 5am every weekday",
