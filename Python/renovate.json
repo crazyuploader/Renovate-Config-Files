@@ -3,12 +3,12 @@
     "extends": ["config:recommended"],
     "automerge": true,
     "rebaseWhen": "conflicted",
-    "recreateClosed": false,
-    "recreateWhen": "always",
+    "recreateWhen": "auto",
     "lockFileMaintenance": {
         "enabled": true,
         "automerge": true
     },
+
     "packageRules": [
         {
             "matchManagers": ["pep621"],

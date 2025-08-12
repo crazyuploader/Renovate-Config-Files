@@ -4,12 +4,12 @@
     "automerge": true,
     "postUpdateOptions": ["npmDedupe", "yarnDedupeFewer", "pnpmDedupe"],
     "rebaseWhen": "conflicted",
-    "recreateClosed": false,
-    "recreateWhen": "always",
+    "recreateWhen": "auto",
     "lockFileMaintenance": {
         "enabled": true,
         "automerge": true
     },
+
     "packageRules": [
         {
             "matchManagers": ["npm"],
