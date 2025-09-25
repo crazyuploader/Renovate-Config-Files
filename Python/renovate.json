@@ -4,10 +4,6 @@
     "automerge": true,
     "rebaseWhen": "conflicted",
     "recreateWhen": "auto",
-    "lockFileMaintenance": {
-        "enabled": true,
-        "automerge": true
-    },
 
     "packageRules": [
         {
